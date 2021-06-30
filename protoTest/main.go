@@ -9,7 +9,9 @@ import (
 	"google.golang.org/grpc/reflection"
 )
 
-type server struct{}
+type server struct {
+	proto.UnimplementedAddServiceServer
+}
 
 func main() {
 	listener, err := net.Listen("tcp", ":4040")
